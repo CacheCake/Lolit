@@ -25,6 +25,13 @@
 
 </head>
 
+<!--GR刷新验证码  -->
+<script language = 'JavaScript'>  
+function reloadCheckCode(){  
+            document.getElementById("codeImg").src="/Lolit/WebRoot/Front_End/Team_Apply/identifyingcode_image.jsp?" + Math.random();;  
+        }  
+    </script> 
+
 <body onresize="bgWidth()" onload="bgWidth()">
 	<div id="panel_div" class="bg_1"></div>
 
@@ -165,6 +172,9 @@
 		</form>
 	</article>
 	<footer class="Footer"> </footer>
+	<!--GR显示验证码  -->
+	 <img id="codeImg" border=0 src="/Lolit/WebRoot/Front_End/Team_Apply/identifyingcode_image.jsp"><a href="javascript:void(0)" onclick="reloadCheckCode()">点击刷性</a> 
+	  输入上面的认证码：  <input type=text name=rand maxlength=4 value="">   
 </body>
 
 <script type="text/javascript"
