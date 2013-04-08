@@ -55,7 +55,7 @@ public class ShowTeamDataCount extends HttpServlet {
 
 			request.setAttribute("teamData", teamData);
 
-			url = "/committee/ShowTeamListS1";
+			url = "/Back_End/Committee/team_data.jsp";
 		} catch (Exception e) {
 			url = url + "?e=101";
 			e.printStackTrace();

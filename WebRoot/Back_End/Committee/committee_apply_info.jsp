@@ -42,7 +42,7 @@
 		<section class="op_div">
 			<input type="search" class="search">
 			<button class="search_button">S</button>
-			<a href="Back_End/HR/new_member.jsp"><button class="addMember">New</button>
+			<a href="committee/ShowTeamDataCount"><button class="addMember">ShowTeamData</button>
 			</a>
 		</section>
 
