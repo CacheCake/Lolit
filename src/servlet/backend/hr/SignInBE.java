@@ -37,18 +37,40 @@ public class SignInBE extends HttpServlet {
 		try {
 			String mAcName = request.getParameter("mAcName");
 			String mPwd = request.getParameter("mPwd");
+			int mRole = Integer.parseInt(request.getParameter("channel"));
 
 			Member member = new Member();
 			member.setmAcName(mAcName);
 			member.setmPwd(mPwd);
-
+			member.setmRole(mRole);
 			mDAO = DAOFactory.getMemberDAOInstance();
 
 			if (mDAO.doSelectForSignIn(member)) {
-				url = request.getContextPath() + "/committee/ShowTeamListS1";
+				// 根据选择的权限跳转到相应的界面
+				switch (mRole) {
+				case 1:
+					url = request.getContextPath()
+							+ "/committee/ShowTeamListS1";
+					break;
+				case 2:
+					url = request.getContextPath()
+							+ "/committee/ShowTeamListS1";
+					break;
+				case 3:
+					url = request.getContextPath()
+							+ "/committee/ShowTeamListS1";
+					break;
+				case 4:
+					url = request.getContextPath()
+							+ "/committee/ShowTeamListS1";
+					break;
+				default:
+					url = "";
+				}
 			} else {
-				url = url + "?e=101";// 后台登陆密码不正确
+				url = url + "?e=101";// 传播员登录失败，后台登陆密码不正确
 			}
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -58,8 +80,7 @@ public class SignInBE extends HttpServlet {
 				e.printStackTrace();
 			}
 			response.sendRedirect(url);
-			//request.getRequestDispatcher(url).forward(request, response);
+			// request.getRequestDispatcher(url).forward(request, response);
 		}
 	}
-
 }

@@ -18,9 +18,9 @@
 <meta http-equiv="expires" content="0">
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
-<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
+
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/css/style_b.css">
 
 </head>
 
@@ -39,7 +39,7 @@
 		areaCount = teamData.getAreaCount();
 		rankCount = teamData.getRankCount();
 	%>
-	<table border="1">
+	<table>
 		<%
 			String[] server = { "无30级号", "比尔吉沃特", "艾欧尼亚", "教育网专区", "征服之海",
 					"守望之海", "影流", "均衡教派", "水晶之痕", "钢铁烈阳", "暗影岛", "黑色玫瑰",
@@ -141,7 +141,7 @@
 			%>
 		</tr>
 	</table>
-	<table border="1">
+	<table>
 		<th>各胜场区间人数</th>
 		<tr>
 			<td>0~99</td>
@@ -159,7 +159,7 @@
 			%>
 		</tr>
 	</table>
-	<table border="1">
+	<table>
 		<th>各学院人数</th>
 		<tr>
 			<%
@@ -180,7 +180,7 @@
 			%>
 		</tr>
 	</table>
-	<table border="1">
+	<table>
 		<th>各区人数</th>
 		<tr>
 			<td>东苑</td>

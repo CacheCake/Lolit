@@ -9,6 +9,7 @@ public interface MemberDAO {
 
 	public void closeDBC2() throws Exception;
 
-	//成员登陆，验证密码
+	// 后台登录
 	public boolean doSelectForSignIn(Member member) throws Exception;
+
 }

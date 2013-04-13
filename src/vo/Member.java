@@ -5,6 +5,7 @@ public class Member {
 	private int mId;
 	private String mAcName;
 	private String mPwd;
+	private int mRole;
 	public int getmId() {
 		return mId;
 	}
@@ -22,6 +23,12 @@ public class Member {
 	}
 	public void setmPwd(String mPwd) {
 		this.mPwd = mPwd;
+	}
+	public int getmRole() {
+		return mRole;
+	}
+	public void setmRole(int mRole) {
+		this.mRole = mRole;
 	}
 	
 }

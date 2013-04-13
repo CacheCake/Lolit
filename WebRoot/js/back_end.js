@@ -21,7 +21,7 @@ function chooseChannel(c, e) {
 
 function signIn() {
 	var form = document.getElementById("sign_in");
-	form.action = "hr/SignInBE";
+	form.action = "hr/SignInBE?channel=" + channel;
 	form.submit();
 }
 
