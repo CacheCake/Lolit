@@ -32,30 +32,31 @@
 		<servlet-name>SignInBE</servlet-name>
 		<servlet-class>servlet.backend.hr.SignInBE</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>ShowTeamListS1</servlet-name>
+		<servlet-class>servlet.backend.committee.ShowTeamListS1</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ShowTeamDataCount</servlet-name>
+		<servlet-class>servlet.backend.committee.ShowTeamDataCount</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ShowLastTeam</servlet-name>
+		<servlet-class>servlet.frontend.teamRegist.ShowLastTeam</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>GetTeamListS1Excel</servlet-name>
+		<servlet-class>servlet.backend.committee.GetTeamListS1Excel</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>ShowAllTeamInf</servlet-name>
+		<servlet-class>servlet.backend.committee.ShowAllTeamInf</servlet-class>
+	</servlet>
   <servlet>
-    <servlet-name>ShowTeamListS1</servlet-name>
-    <servlet-class>servlet.backend.committee.ShowTeamListS1</servlet-class>
+    <servlet-name>ShowTeamActionData</servlet-name>
+    <servlet-class>servlet.backend.committee.ShowTeamActionData</servlet-class>
   </servlet>
-  <servlet>
-    <servlet-name>ShowTeamDataCount</servlet-name>
-    <servlet-class>servlet.backend.committee.ShowTeamDataCount</servlet-class>
-  </servlet>
-  <servlet>
-    <servlet-name>ShowLastTeam</servlet-name>
-    <servlet-class>servlet.frontend.teamRegist.ShowLastTeam</servlet-class>
-  </servlet>
-  <servlet>
-    <description>This is the description of my J2EE component</description>
-    <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>GetTeamListS1Excel</servlet-name>
-    <servlet-class>servlet.backend.committee.GetTeamListS1Excel</servlet-class>
-  </servlet>
-  <servlet>
-    <description>This is the description of my J2EE component</description>
-    <display-name>This is the display name of my J2EE component</display-name>
-    <servlet-name>ShowAllTeamInf</servlet-name>
-    <servlet-class>servlet.backend.committee.ShowAllTeamInf</servlet-class>
-  </servlet>
+
 
 
 
@@ -93,27 +94,55 @@
 		<servlet-name>SignInBE</servlet-name>
 		<url-pattern>/hr/SignInBE</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ShowTeamListS1</servlet-name>
+		<url-pattern>/committee/ShowTeamListS1</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ShowTeamDataCount</servlet-name>
+		<url-pattern>/committee/ShowTeamDataCount</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ShowLastTeam</servlet-name>
+		<url-pattern>/committee/ShowLastTeam</url-pattern>
+		<url-pattern>/Welcome</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GetTeamListS1Excel</servlet-name>
+		<url-pattern>/servlet/GetTeamListS1Excel</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ShowAllTeamInf</servlet-name>
+		<url-pattern>/servlet/ShowAllTeamInf</url-pattern>
+	</servlet-mapping>
   <servlet-mapping>
-    <servlet-name>ShowTeamListS1</servlet-name>
-    <url-pattern>/committee/ShowTeamListS1</url-pattern>
+    <servlet-name>ShowTeamActionData</servlet-name>
+    <url-pattern>/committee/ShowTeamActionData</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>ShowTeamDataCount</servlet-name>
-    <url-pattern>/committee/ShowTeamDataCount</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>ShowLastTeam</servlet-name>
-    <url-pattern>/committee/ShowLastTeam</url-pattern>
-    <url-pattern>/Welcome</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>GetTeamListS1Excel</servlet-name>
-    <url-pattern>/servlet/GetTeamListS1Excel</url-pattern>
-  </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>ShowAllTeamInf</servlet-name>
-    <url-pattern>/servlet/ShowAllTeamInf</url-pattern>
-  </servlet-mapping>
+
+
+	<!--队伍行为数据分析-->
+
+	<filter>
+		<filter-name>TeamActionDataFilter</filter-name>
+		<filter-class>actionListener.TeamActionDataFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>TeamActionDataFilter</filter-name>
+		<url-pattern>/Go.jsp</url-pattern>
+		<url-pattern>/Front_End/Team_Apply/team_regist_success.jsp</url-pattern>
+	</filter-mapping>
+
+	<!--错误报告数据分析-->
+	<filter>
+		<filter-name>ErrorPromptFilter</filter-name>
+		<filter-class>actionListener.ErrorPromptFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>ErrorPromptFilter</filter-name>
+		<url-pattern>/Front_End/front_end_prompt.jsp</url-pattern>
+	</filter-mapping>
+
 
 
 	<welcome-file-list>

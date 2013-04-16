@@ -27,6 +27,7 @@ public class TeamImpl implements TeamDAO {
 
 	}
 
+	//查询队伍名称是否已经存在
 	public boolean doSelectTeamName(String tName) throws Exception {
 
 		String teamName = tName;
@@ -47,6 +48,7 @@ public class TeamImpl implements TeamDAO {
 		}
 	}
 
+	//查询队长学号是否已经存在
 	public boolean doSelectPlayerId(int pId) throws Exception {
 
 		String sql = "select * from Lolit.player where pId = '" + pId + "' ";// 查看队长学号是否已经存在
@@ -81,6 +83,7 @@ public class TeamImpl implements TeamDAO {
 		}
 	}
 
+	//插入队伍注册信息
 	public boolean doInsert(Team team) throws Exception {
 		// TODO Auto-generated method stub
 		boolean flag = false; // 判断是否注册成功
@@ -193,6 +196,7 @@ public class TeamImpl implements TeamDAO {
 		return flag;
 	}
 
+	//查询队伍是否登录
 	public boolean doSelectForSignIn(Long teamId, String teamPwd)
 			throws Exception {
 
@@ -217,6 +221,7 @@ public class TeamImpl implements TeamDAO {
 		return false;
 	}
 
+	//查询是否已经抽签
 	public boolean doSelectForIfLotted(Long tId) throws Exception {
 
 		// 999为默认空值，表示没抽签
@@ -240,6 +245,7 @@ public class TeamImpl implements TeamDAO {
 		return false;
 	}
 
+	//录入队伍抽签号
 	public boolean doInsertOrder(Long tId) throws Exception {
 
 		int tOrder;
@@ -298,6 +304,7 @@ public class TeamImpl implements TeamDAO {
 		return false;
 	}
 
+	//查询抽签后的信息
 	public List<Team> doSelectForMatchList() throws Exception {
 
 		String sql = "SELECT * FROM team WHERE tState = '2' ORDER BY tOrder";
