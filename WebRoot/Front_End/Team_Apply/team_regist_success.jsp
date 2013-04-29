@@ -40,9 +40,9 @@
 			<div class="apply_suc_bg"></div>
 			<div class="apply_suc_panel_header" style="width: 1000px;">
 				<img src="images/apply/congratulation.png" class="congra"><br>
-				<label class="apply_suc_panel_label" style="color: #333;"><%=request.getAttribute("tName")%></label><br>
-				<span class="apply_suc_panel_span" style="color: #333;"><%=request.getAttribute("tBelonging")%></span><span
-					class="apply_suc_panel_span" style="color: #333;">队长：<%=request.getAttribute("pName")%></span><br>
+				<label class="apply_suc_panel_label" style="color: #333;"><%=session.getAttribute("tName")%></label><br>
+				<span class="apply_suc_panel_span" style="color: #333;"><%=session.getAttribute("tBelonging")%></span><span
+					class="apply_suc_panel_span" style="color: #333;">队长：<%=session.getAttribute("pName")%></span><br>
 				<div class="apply_suc_panel_aside GRa">非常感谢您的耐心注册，并恭喜您的队伍已完成第一步报名任务！</div>
 				<br>
 				<div class="GRb">
